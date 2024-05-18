@@ -41,19 +41,19 @@ Documentation: Provides concise documentation and comments for improved code rea
 
 ```bash
 git clone https://github.com/your-zand0524/burger-ordering-system.git
-
+```
 2. Navigate to the project directory.
-
+```bash
 cd burger-ordering-system
-
+```
 3. Compile the java files.
-
+```bash
 javac Main.java
-
+```
 4. Run the main class.
-
+```bash
 java Main
-
+```
 _____________________________________________________
 ## **Usage**
 _____________________________________________________
@@ -61,33 +61,48 @@ _____________________________________________________
 ### **Creating a Default Meal**
 
 // Create a default meal
-MealOrder defaultMeal = new MealOrder();
+```bash
+MealOrder defaultMeal = new MealOrder(); //Defaults to regular burger special. 
 defaultMeal.printReceipt();
+```
 
 ### **Creating a Custom Meal**
+```bash
+// Create custom burger with up to 3 toppings, drink, and side instances
+// These can be added within the MealOrder method parameters.
 
-// Create custom burger, drink, and side instances
-// Add toppings to the burger as needed
 Burgers burger = new Burgers(1); // Regular burger
-burger.addToppings(1, 2, 3); // Example toppings individually priced. 
-Drink drink = new Drink("Coke", 'M'); // Medium coke
-Sides side = new Sides("Fries"); // Fries
-// Pass them to MealOrder constructor
+Drink drink = new Drink("Coke", 'M'); // Medium coke. 
+Sides side = new Sides("Fries"); // Fries.
+
+// Create or Pass them to MealOrder constructor
 MealOrder customMeal = new MealOrder(burger, drink, side);
+
+//Add toppings 
+customMeal.burger.addToppings(1, 2, 3); // Example toppings, individually priced. See index below. 
+
 // Print receipt
 customMeal.printReceipt();
+```
 
 ### **Creating a Deluxe Meal Special Combo**
-// Create deluxe burger, drink, and side instances
-// Add toppings to the deluxe burger as needed
+```bash
+// Create deluxe burger, drink, and side instances.
+// These can be added within the MealOrder method parameters.
+
 DeluxeBurger deluxeBurger = new DeluxeBurger(2); // Deluxe burger
-deluxeBurger.addToppings(1, 2, 3, 4, 5); // Example toppings
 Drink drink = new Drink("Coke", 'L'); // Large coke
 Sides side = new Sides("Fries"); // Fries
-// Pass them to MealOrder constructor
+
+// Create or Pass them to MealOrder constructor
 MealOrder deluxeMeal = new MealOrder(deluxeBurger, drink, side);
+
+//Add toppings to deluxe burger as needed
+deluxeMeal.deluxeBurger.addToppings(1, 2, 3, 4, 5); // Example toppings
+
 // Print receipt
 deluxeMeal.printReceipt();
+```
 
 ## **Overview of Menu & Index Numbers**
 ______________________________________________
